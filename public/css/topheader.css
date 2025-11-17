@@ -1,0 +1,51 @@
+.top-header {
+    width: 100%;
+    height: 60px;
+    background: #1e3a8a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.top-header .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.top-header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.top-header nav a:hover {
+    background: #2563eb;
+}
+
+.top-header form button {
+    background: #dc2626;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.top-header form button:hover {
+    background: #b91c1c;
+}
+
+.page-content {
+    margin-top: 80px;
+    padding: 20px;
+}
