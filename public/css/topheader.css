@@ -1,51 +1,135 @@
+/* Header */
 .top-header {
+    
     width: 100%;
-    height: 60px;
-    background: #1e3a8a;
-    color: white;
+    height: 80px;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 2em;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Logo + Image */
 .top-header .logo {
-    font-size: 22px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo-image {
+    height: 50px; /* حجم الشعار */
+    width: auto;
+    margin-right: 12px; /* مسافة بين الشعار والنص */
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+/* Navigation */
+.top-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* الروابط تبدأ بعد الشعار */
+    gap: 1.5em;
+    margin-left: 2em;
 }
 
 .top-header nav a {
-    color: white;
+    color: #e2e8f0;
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 16px;
-    padding: 8px 12px;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.75em 1.25em;
     border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-.top-header nav a:hover {
-    background: #2563eb;
+.top-header nav a:hover,
+.top-header nav a:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.top-header form {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
 
 .top-header form button {
-    background: #dc2626;
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
     border: none;
-    padding: 8px 12px;
-    color: white;
+    padding: 0.75em 1.5em;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1em;
     border-radius: 6px;
     cursor: pointer;
-    margin-left: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.top-header form button:hover {
-    background: #b91c1c;
+.top-header form button:hover,
+.top-header form button:focus {
+    background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Page content spacing */
 .page-content {
-    margin-top: 80px;
-    padding: 20px;
+    margin-top: 100px;
+    padding: 2em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        height: auto;
+        padding: 1em 1.5em;
+        text-align: center;
+    }
+
+    .top-header nav {
+        margin-top: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .top-header nav a {
+        margin: 0.5em;
+        font-size: 0.9em;
+    }
+
+    .top-header form {
+        margin-top: 1em;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .top-header form button {
+        flex: 1;
+        max-width: 150px;
+    }
+    .top-header form {
+    margin-right: 40px;
+}
+
+    
 }

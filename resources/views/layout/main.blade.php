@@ -11,20 +11,29 @@
 <body>
 
     {{-- TOP HEADER --}}
-    <div class="top-header">
-        <div class="logo">My PMS</div>
-
-        <nav>
-            <a href="/dashboard">🏠 Home</a>
-            <a href="/about">ℹ️ About</a>
-            <a href="/settings">⚙️ Settings</a>
-
-            <form method="POST" action="/logout" style="display:inline;">
-                @csrf
-                <button>Logout</button>
-            </form>
-        </nav>
+<header class="top-header">
+    <!-- Logo + Text -->
+    <div class="logo">
+    <img src="{{ asset('images/logo.png') }}" alt="FlowWork Logo" class="logo-image">
+        <span class="logo-text">FlowWork</span>
     </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Settings</a>
+    </nav>
+
+    <!-- Logout Only -->
+    <form action="/logout" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button class="logout-btn">Logout</button>
+    </form>
+</header>
+
+
+
 
     {{-- SIDEBAR (اختياري) --}}
     @if(isset($sidebar) && $sidebar == true)
