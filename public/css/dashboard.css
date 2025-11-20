@@ -1,84 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: -webkit-linear-gradient(left, #003366,#004080,#0059b3,#0073e6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
 }
 
-.container {
-    width: 900px;
-    background: white;
-    padding: 25px;
-    margin-top: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+.dashboard-wrapper {
+  width: 900px;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 25px rgba(0,0,0,0.2);
 }
 
-h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #2563eb;
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 .section {
-    background: #f9fafc;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border-left: 5px solid #2563eb;
+  background: #eff4fa;
+  padding: 18px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border-left: 5px solid #1a75ff;
 }
 
 .section h3 {
-    margin: 0 0 10px;
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #1a75ff;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
 }
 
 .stat-box {
-    background: #2563eb;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
+  background: -webkit-linear-gradient(left,#003366,#004080,#0059b3,#0073e6);
+  color: white;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .kanban {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .kanban-column {
-    flex: 1;
-    background: #eef2f7;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.kanban-column h4 {
-    margin-top: 0;
+  flex: 1;
+  background: #e9eef5;
+  padding: 15px;
+  border-radius: 12px;
 }
 
 .kanban-task {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
 }
 
 .shortcut-btn {
-    display: block;
-    padding: 12px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
+  display: block;
+  padding: 12px;
+  background: -webkit-linear-gradient(left,#003366,#004080,#0059b3,#0073e6);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }

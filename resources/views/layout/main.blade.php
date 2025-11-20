@@ -10,37 +10,40 @@
 
 <body>
 
+<!-- TOP HEADER -->
 <header class="top-header">
     <div class="logo">
-        <img src="{{ asset('images/logo.png') }}" alt="FlowWork Logo" class="logo-image">
+        <img src="{{ asset('images/logo.png') }}" class="logo-image">
         <span class="logo-text">FlowWork</span>
     </div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Settings</a>
-    </nav>
+    <div class="nav-actions">
 
-    <form action="/logout" method="POST">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <button class="logout-btn">Logout</button>
-    </form>
+        <a href="/dashboard" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/settings" class="nav-link">Settings</a>
+
+    </div>
+
+    <div class="logout-area">
+        <form action="/logout" method="POST" class="logout-form">
+            @csrf
+            <button class="logout-btn">Logout</button>
+        </form>
+    </div>
 </header>
 
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <a href="/projects">📁 Projects</a>
+    <a href="/tasks">📝 Tasks</a>
+    <a href="/team">👥 Team</a>
+</div>
 
-
-
-    @if(isset($sidebar) && $sidebar == true)
-        <div class="sidebar">
-            @include('layout.sidebar')
-        </div>
-    @endif
-
-    {{-- PAGE CONTENT --}}
-    <div class="page-content">
-        @yield('content')
-    </div>
+<!-- MAIN CONTENT -->
+<div class="page-content" style="margin-left:260px;">
+    @yield('content')
+</div>
 
 </body>
 </html>

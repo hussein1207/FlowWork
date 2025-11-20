@@ -1,0 +1,28 @@
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #00264d, #003366, #004080);
+    padding-top: 110px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.25);
+}
+
+.sidebar a {
+    display: block;
+    padding: 14px 22px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 8px 10px;
+    transition: .2s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+}
