@@ -1,32 +1,30 @@
-
 @extends('layout.main')
 
 @section('content')
-<link rel="stylesheet" href="/css/forms.css">
-<form method="POST" action="{{ route('task.store') }}">
-    <h2>Add Task</h2>
-    @csrf
+<link rel="stylesheet" href="/css/pagebox.css">
 
-    <label>Task Name:</label>
-    <input type="text" name="name" required>
+<div class="page-box">
 
-    <br><br>
+    <h1>Add New Task</h1>
 
-    <label>Deadline:</label>
-    <input type="date" name="deadline" required>
+    <form method="POST" action="{{ route('tasks.store') }}">
+        @csrf
 
-    <br><br>
+        <label>Task Name:</label>
+        <input type="text" name="name" required>
 
-    <label>Priority:</label>
-    <select name="priority">
-        <option>High</option>
-        <option>Medium</option>
-        <option>Low</option>
-    </select>
+        <label>Deadline:</label>
+        <input type="date" name="deadline" required>
 
-    <br><br>
+        <label>Priority:</label>
+        <select name="priority" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
 
-    <button type="submit">Add Task</button>
-</form>
+        <button type="submit" class="save-btn">Save Task</button>
+    </form>
 
+</div>
 @endsection
