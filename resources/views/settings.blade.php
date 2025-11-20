@@ -20,6 +20,14 @@
         <input type="password" name="password">
 
         <button class="save-btn">Save Changes</button>
+        <br><br>
+        @if ($errors->any())
+            <div style="background:#ffdddd;padding:10px;border-radius:6px;margin-bottom:10px;color:#900;">
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
     </form>
 
     <h2>Preferences</h2>

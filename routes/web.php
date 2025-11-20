@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\SettingsController;
+
 Route::get('/', function () {
     return view('auth.form');
 });
@@ -37,3 +39,4 @@ Route::get('/about', function () {
 Route::get('/settings', function () {
     return view('settings');
 })->name('settings.update');
+Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
