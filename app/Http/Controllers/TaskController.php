@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
-        return view('tasks.index'); // أنشئ الملف لو مش موجود
-=======
         return view('tasks.index');
->>>>>>> 3cafa3c14c5488658de336cea52e9522df12e173
     }
 
     public function create()
@@ -22,16 +19,13 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        // تخزين المهمة
-        return redirect('/dashboard')->with('success', 'Task added successfully!');
-=======
-        // validate
+        // Validate request
         $request->validate([
             'name' => 'required',
             'deadline' => 'required|date',
             'priority' => 'required'
         ]);
+
         Task::create([
             'name' => $request->name,
             'deadline' => $request->deadline,
@@ -40,9 +34,6 @@ class TaskController extends Controller
             'status' => $request->status,
         ]);
 
-
-        // لاحقاً بنربطها بالDB
         return redirect()->route('tasks.index')->with('success', 'Task added successfully!');
->>>>>>> 3cafa3c14c5488658de336cea52e9522df12e173
     }
 }
