@@ -8,11 +8,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
-        return view('tasks.index'); // أنشئ الملف لو مش موجود
-=======
         return view('tasks.index');
->>>>>>> 3cafa3c14c5488658de336cea52e9522df12e173
     }
 
     public function create()
@@ -22,10 +18,6 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        // تخزين المهمة
-        return redirect('/dashboard')->with('success', 'Task added successfully!');
-=======
         // validate
         $request->validate([
             'name' => 'required',
@@ -43,6 +35,5 @@ class TaskController extends Controller
 
         // لاحقاً بنربطها بالDB
         return redirect()->route('tasks.index')->with('success', 'Task added successfully!');
->>>>>>> 3cafa3c14c5488658de336cea52e9522df12e173
     }
 }
