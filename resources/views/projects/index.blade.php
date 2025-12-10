@@ -14,7 +14,19 @@
 
     <h2 style="margin-top:25px;">Your Projects</h2>
 
-    <p>No projects added yet.</p>
+   @foreach ($projects as $project)
+    <div style="padding:15px;border:1px solid #ddd;border-radius:10px;margin-bottom:10px;">
+        <h3>{{ $project->name }}</h3>
+        <p>{{ $project->description }}</p>
+
+        <p><b>Team:</b> 
+            @foreach ($project->team as $member)
+                {{ $member->name }}{{ !$loop->last ? ', ' : '' }}
+            @endforeach
+        </p>
+
+    </div>
+    @endforeach
 
 </div>
 @endsection

@@ -15,6 +15,17 @@
         <label>Description:</label>
         <input type="text" name="description" required>
 
+
+        <!-- 🔥 اختيار أعضاء الفريق -->
+        <label>Assign Team Members:</label>
+        <select name="team_members[]" multiple required>
+            @foreach ($teamMembers as $member)
+                <option value="{{ $member->id }}">{{ $member->name }}</option>
+            @endforeach
+        </select>
+        <p style="font-size:13px;color:#666">اضغط Ctrl لاختيار أكثر من عضو</p>
+
+
         <button type="submit" class="save-btn">Save Project</button>
     </form>
 

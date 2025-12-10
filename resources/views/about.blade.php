@@ -19,8 +19,8 @@
     </ul>
 
     <h2>About the Developer</h2>
-    <p>Developed by: <b>Your Name</b></p>
-    <p>Email: <b>your@email.com</b></p>
+    <p>Developed by: <b>Sadeen, Abdelmonm. Hussien, Abdullah</b></p>
+    <p>Email: <b>FlowWorkHelp@contact.us</b></p>
 
     <h2>Version</h2>
     <p>FlowWork v1.0.0</p>

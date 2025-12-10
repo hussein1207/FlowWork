@@ -11,4 +11,9 @@ class TeamMember extends Model
         'email',
         'role',
     ];
+    public function projects()
+    {
+         return $this->belongsToMany(Project::class, 'project_team');
+    }
+
 }

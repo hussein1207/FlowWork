@@ -11,4 +11,9 @@ class Project extends Model
         'description',
         'deadline',
     ];
+    public function team()
+    {
+         return $this->belongsToMany(TeamMember::class, 'project_team');
+    }
+
 }
