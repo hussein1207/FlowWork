@@ -37,7 +37,7 @@
 
                 <h3>{{ $task->name }}</h3>
 
-                <p><b>Project:</b> {{ $task->project->name }}</p>
+                <p><b>Project:</b> {{ optional($task->project)->name ?? 'No Project' }}</p>
                 <p><b>Deadline:</b> {{ $task->deadline }}</p>
                 <p><b>Priority:</b> {{ ucfirst($task->priority) }}</p>
 
