@@ -17,7 +17,7 @@ return new class extends Migration
         $table->date('deadline');
         $table->string('priority');
         $table->unsignedBigInteger('project_id')->nullable();
-        $table->string('status')->default('todo'); // 👈 أهم شيء
+        $table->string('status')->default('todo');
         $table->timestamps();
     });
 }

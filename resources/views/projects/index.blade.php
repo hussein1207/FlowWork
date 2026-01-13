@@ -25,28 +25,31 @@
 
     @foreach ($projects as $project)
         <div style="
-            padding:20px;
+            padding:0px 0px 20px 20px;
             border:1px solid #ddd;
             border-radius:12px;
             margin-bottom:15px;
             background:#fff;
         ">
-            
-            <h3 style="margin-bottom:5px;">{{ $project->name }}</h3>
-            <p style="margin-bottom:10px;color:#555;">{{ $project->description }}</p>
-
-            <p style="margin-bottom:15px;">
-                <b>Team:</b> 
-                @foreach ($project->team as $member)
-                    {{ $member->name }}{{ !$loop->last ? ', ' : '' }}
-                @endforeach
+            <h3 style="margin-bottom:0px; font-size: 28px;">{{ $project->name }}</h3>
+            <p style="margin-bottom:12px; color:#555; font-size:16px;">
+              {{ $project->description }}
             </p>
 
-            <!-- 🔥 أزرار Edit & Delete المتناسقة -->
-            <div style="display:flex; gap:12px; align-items:center;">
-                
+            <div style="margin-bottom:15px;">
+                <b style="font-size: 12px">Team:</b>
+                <ol style="display:inline-table; margin:0 0 0 10px; padding-left:20px;">
+                    @foreach ($project->team as $member)
+                        <li style="font-size: 12px; display:flexbox; margin-left:5px; color:#312424;">
+                            {{ $member->name }}
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
+            <div style="display:inline-flex; gap:12px; align-items:right;">
+                <!-- -- Edit Button -- -->
                 <a href="{{ route('projects.edit', $project->id) }}"
-                   style="
+                    style="
                     min-width:90px;
                     text-align:center;
                     padding:10px 0;
@@ -56,31 +59,35 @@
                     text-decoration:none;
                     font-weight:600;
                     display:inline-block;
-                   ">
-                   Edit
+                  ">
+                  Edit
                 </a>
 
                 <form action="{{ route('projects.destroy', $project->id) }}" 
                       method="POST"
-                      onsubmit="return confirm('هل أنت متأكد من حذف المشروع؟');"
-                      style="margin:0;">
+                      onsubmit="return confirm('Are you sure you want to delete this project?');"
+                      style="display:inline-flex; justify-content: right;">
                     @csrf
                     @method('DELETE')
 
                     <button type="submit"
                             style="
                                 min-width:90px;
+                                text-align:center;
                                 padding:10px 0;
                                 background:#dc3545;
                                 color:white;
-                                border:none;
                                 border-radius:8px;
-                                cursor:pointer;
+                                text-decoration:none;
                                 font-weight:600;
+                                display:inline-block;
+                                border:none;
+                                cursor:pointer;
                             ">
                         Delete
                     </button>
                 </form>
+
 
             </div>
         </div>

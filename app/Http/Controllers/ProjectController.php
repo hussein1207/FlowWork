@@ -37,7 +37,7 @@ class ProjectController extends Controller
             ->with('success', 'Project created successfully!');
     }
 
-    /* صفحة التعديل */
+    // this is to load the edit page with current project data
     public function edit(Project $project)
     {
         $teamMembers = TeamMember::all();
@@ -46,7 +46,7 @@ class ProjectController extends Controller
         return view('projects.edit', compact('project', 'teamMembers'));
     }
 
-    /* تحديث المشروع */
+    // this is update the values for the current project
     public function update(Request $request, Project $project)
     {
         $project->update([
@@ -59,5 +59,11 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index')
             ->with('success', 'Project updated successfully!');
+    }
+    public function destroy(Project $project)
+    {
+        $project->delete();
+        return redirect()->route('projects.index')
+            ->with('success', 'Project deleted successfully!');
     }
 }

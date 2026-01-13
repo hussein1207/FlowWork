@@ -14,7 +14,6 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('team_member_id');
 
-            // علاقات المفتاح الأجنبي
             $table->foreign('project_id')
                   ->references('id')->on('projects')
                   ->onDelete('cascade');

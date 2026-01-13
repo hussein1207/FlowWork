@@ -30,8 +30,8 @@ class TaskController extends Controller
             'name' => $request->name,
             'deadline' => $request->deadline,
             'priority' => $request->priority,
-            'project_id' => $request->project_id,
-            'status' => $request->status,
+            'project_id' => $request->project_id || "1",
+            'status' => $request->status || "todo",
         ]);
 
         return redirect()->route('tasks.index')->with('success', 'Task added successfully!');
