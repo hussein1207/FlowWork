@@ -23,6 +23,15 @@
             <option value="Low">Low</option>
         </select>
 
+        <!-- New Project Combobox -->
+        <label>Project:</label>
+        <select name="project_id" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;" required>
+            <option value="" disabled selected>Select a project</option>
+            @foreach($projects as $project)
+                <option value="{{ $project->id }}">{{ $project->name }}</option>
+            @endforeach
+        </select>
+
         <button type="submit" class="save-btn">Save Task</button>
     </form>
 

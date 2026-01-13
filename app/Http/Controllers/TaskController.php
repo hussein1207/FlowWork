@@ -14,7 +14,9 @@ class TaskController extends Controller
 
     public function create()
     {
-        return view('tasks.create');
+        return view('tasks.create', [
+            'projects' => \App\Models\Project::all()
+        ]);
     }
 
     public function store(Request $request)
