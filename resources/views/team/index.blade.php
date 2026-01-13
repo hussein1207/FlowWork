@@ -8,7 +8,16 @@
     <h1>Team Members</h1>
 
     <a href="{{ route('team.create') }}"
-       style="padding:12px 20px;background:#0073e6;color:white;border-radius:10px;text-decoration:none;font-weight:600;">
+       style="
+        padding:12px 20px;
+        background:#0073e6;
+        color:white;
+        border-radius:10px;
+        text-decoration:none;
+        font-weight:600;
+        display:inline-block;
+        margin-bottom:20px;
+       ">
         + Add New Member
     </a>
 
@@ -17,23 +26,46 @@
     @if($team->count() == 0)
         <p>No team members found.</p>
     @else
-        <ul class="team-list">
+        <ul style="list-style:none; padding:0; margin-top:15px;">
             @foreach($team as $member)
-                <li class="team-item">
-                    <div class="member-text">
-                        <b>{{ $member->name }}</b> —
-                        {{ $member->email }} —
-                        ({{ $member->role }})
+                <li style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:12px 15px;
+                    border:1px solid #ddd;
+                    border-radius:10px;
+                    margin-bottom:10px;
+                    background:#fff;
+                ">
+                    <!-- معلومات العضو -->
+                    <div style="color:#333;">
+                        <b>{{ $member->name }}</b>
+                        <span style="color:#666;">
+                            — {{ $member->email }} — ({{ $member->role }})
+                        </span>
                     </div>
 
                     <!-- زر الحذف -->
                     <form action="{{ route('team.destroy', $member->id) }}"
                           method="POST"
-                          onsubmit="return confirm('Delete this member?');">
+                          onsubmit="return confirm('Delete this member?');"
+                          style="margin:0;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="delete-btn">deldte</button>
 
+                        <button type="submit"
+                                style="
+                                    padding:8px 16px;
+                                    background:#dc3545;
+                                    color:white;
+                                    border:none;
+                                    border-radius:8px;
+                                    cursor:pointer;
+                                    font-weight:600;
+                                ">
+                            Delete
+                        </button>
                     </form>
                 </li>
             @endforeach
