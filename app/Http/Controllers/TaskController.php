@@ -8,7 +8,6 @@ use App\Models\Project;
 
 class TaskController extends Controller
 {
-    /* عرض المهام */
     public function index()
     {
         $projectsCount = Project::count();
@@ -17,7 +16,6 @@ class TaskController extends Controller
         return view('tasks.index', compact('projectsCount', 'tasks'));
     }
 
-    /* صفحة إنشاء مهمة */
     public function create()
     {
         $projects = Project::all();
@@ -31,7 +29,6 @@ class TaskController extends Controller
         return view('tasks.create', compact('projects'));
     }
 
-    /* تخزين مهمة */
     public function store(Request $request)
     {
         $request->validate([
@@ -46,13 +43,12 @@ class TaskController extends Controller
             'deadline'   => $request->deadline,
             'priority'   => $request->priority,
             'project_id' => $request->project_id,
-            'status'     => 'todo', // الحالة الافتراضية
+            'status'     => 'todo', // default value (status can be 'todo', 'in_progress', 'done')
         ]);
 
         return redirect()->route('tasks.index');
     }
 
-    /* تحديث حالة المهمة */
     public function updateStatus(Request $request, Task $task)
     {
         $request->validate([

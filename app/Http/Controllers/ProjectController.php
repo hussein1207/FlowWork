@@ -8,21 +8,21 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    /* عرض المشاريع */
+    /* show projects */
     public function index()
     {
         $projects = Project::with('team')->get();
         return view('projects.index', compact('projects'));
     }
 
-    /* صفحة الإنشاء */
+    /* create projects */
     public function create()
     {
         $teamMembers = TeamMember::all();
         return view('projects.create', compact('teamMembers'));
     }
 
-    /* تخزين مشروع جديد */
+    /* store new project */
     public function store(Request $request)
     {
         $project = Project::create([
@@ -54,7 +54,7 @@ class ProjectController extends Controller
             'description' => $request->description,
         ]);
 
-        // تحديث أعضاء الفريق
+        // update team members
         $project->team()->sync($request->team_members);
 
         return redirect()->route('projects.index')
