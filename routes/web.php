@@ -48,6 +48,7 @@ Route::get('/team', [TeamController::class, 'index'])->name('team.index');
 Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
 Route::post('/team/store', [TeamController::class, 'store'])->name('team.store');
 Route::get('/kanban', [KanbanController::class, 'index'])->name('kanban.index');
+Route::resource('projects', ProjectController::class);
 
 
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');

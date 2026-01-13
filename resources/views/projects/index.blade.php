@@ -14,18 +14,22 @@
 
     <h2 style="margin-top:25px;">Your Projects</h2>
 
-   @foreach ($projects as $project)
-    <div style="padding:15px;border:1px solid #ddd;border-radius:10px;margin-bottom:10px;">
-        <h3>{{ $project->name }}</h3>
-        <p>{{ $project->description }}</p>
+    @foreach ($projects as $project)
+        <div style="padding:15px;border:1px solid #ddd;border-radius:10px;margin-bottom:10px;">
+            <h3>{{ $project->name }}</h3>
+            <p>{{ $project->description }}</p>
 
-        <p><b>Team:</b> 
-            @foreach ($project->team as $member)
-                {{ $member->name }}{{ !$loop->last ? ', ' : '' }}
-            @endforeach
-        </p>
+            <p><b>Team:</b> 
+                @foreach ($project->team as $member)
+                    {{ $member->name }}{{ !$loop->last ? ', ' : '' }}
+                @endforeach
+            </p>
 
-    </div>
+            <a href="{{ route('projects.edit', $project->id) }}"
+               style="padding:8px 15px;background:#28a745;color:white;border-radius:6px;text-decoration:none;">
+               Edit
+            </a>
+        </div>
     @endforeach
 
 </div>
